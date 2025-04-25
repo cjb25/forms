@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      "Mad Libs - Accessibility Edition" CJ's Byte of Brilliance Presentation
+    </title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Experimentation Notes: I tested how each of my screen readers interpret the form labels and ARIA attributes. I used VoiceOver (MAC), JAWS (Windows), and NVDA (Windows). Each of them responds differently to combinations of <label>, aria-label, aria-labelledby, <fieldset>, and <legend> elements. Sources: MDN docs on ARIA: https://developer.mozilla.org/en-US/docs/Web/Acc essibility/ARIA
+ W3C WAI ARIA Practices: https://www.w3.org/WAI/ARIA/apg/
+Inclusive Components: https://inclusive-components.design/-->
+    <form id="form" aria-labelledby="form">
+      <fieldset>
+        <legend id="fill-form">Fill in the blanks below:</legend>
+        <!--Input labeled for screen readers, though how they behave is all across the board. This works best for me, for now-->
+        <div class="head">
+          <h1>ARIA Kidding Me?</h1>
+          <h2>Labels, Tabs, and Tears.</h2>
+          <h3><em>(Assist and SEE!)</em></h3>
+        </div>
+
+        <label for="captcha">A Feeling/State of Being:</label>
+        <input
+          type="text"
+          id="captcha"
+          name="captcha"
+          aria-label="describe feeling here "
+          placeholder="Descriptive Adjective"
+          required
+        />
+
+        <label for="stressball">Item of Comfort: </label>
+        <input
+          type="text"
+          id="stressball"
+          name="stressball"
+          aria-label="Name an object of comfort here"
+          placeholder="Object"
+          required
+        />
+
+        <label for="help">Google Phrase:</label>
+        <input
+          type="text"
+          id="help"
+          name="help"
+          aria-label="enter search query here"
+          placeholder="Search Query"
+          required
+        />
+
+        <label for="stackoverflow">A Ridiculous Number:</label>
+        <input
+          id="stackoverflow"
+          name="stackoverflow"
+          type="number"
+          aria-label="enter ridiculous number here"
+          placeholder="Number"
+          required
+        />
+
+        <label for="narrator" aria-label="Which screen reader do you prefer?"
+          >Assistive Technology:</label
+        >
+        <select id="narrator" name="narrator">
+          <option value="">--Select Preference--</option>
+          <option value="VoiceOver">VoiceOver (Apple's sassy assistant)</option>
+          <option value="JAWS">JAWS (the OG knows more than you)</option>
+          <option value="NVDA">NVDA (no-cost ninja dominating desktops)</option>
+          <option value="TalkBack">TalkBack (Androids back-seat driver)</option>
+          <option value="Other">
+            Other (mysterious stranger at the tech party?)
+          </option>
+        </select>
+
+        <fieldset>
+          <legend>Choose your vibe:</legend>
+          <label
+            ><input type="radio" name="manual" value="manual" /> I'm totally
+            crushing it</label
+          >
+          <label
+            ><input type="radio" name="manual" value="manual" /> over-analyzing
+            everything</label
+          >
+          <label
+            ><input type="radio" name="manual" value="manual" /> spiritually
+            elsewhere</label
+          >
+        </fieldset>
+
+        <label for="hexWhite" aria-label="Pick a color">
+          Pick An Eye-Pleasing Color:</label
+        >
+        <input type="color" id="hexWhite" name="hexWhite" value="" />
+
+        <fieldset>
+          <legend>Check all that applied:</legend>
+          <label
+            ><input type="checkbox" name="glitchy" value="hair pulling panic" />
+            hair-pulling panic</label
+          >
+          <label
+            ><input type="checkbox" name="glitchy" value="procrastination" />
+            procrastination</label
+          >
+          <label
+            ><input type="checkbox" name="glitchy" value="mild breakthrough" />
+            mild breakthrough</label
+          >
+        </fieldset>
+
+        <label for="stoic" aria-label="Enter adverb">Tone of Voice:</label>
+        <input type="text" id="stoic" name="stoic" placeholder="Adverb" />
+
+        <label for="holyPixels" aria-label="enter an exclamation">
+          A Dramatic Declaration:</label
+        >
+        <input
+          type="text"
+          id="holyPixels"
+          name="holyPixels"
+          placeholder="Exclamation"
+        />
+
+        <label for="semanticSkeletons" aria-label="What you finally realized">
+          The Lightbulb Moment:</label
+        >
+        <textarea
+          type="textarea"
+          id="semanticSkeletons"
+          name="semanticSkeletons"
+          rows="4"
+          cols="50"
+        ></textarea>
+
+        <label for="snac"> Coping Mechanism:</label>
+        <input
+          type="text"
+          id="snac"
+          name="snac"
+          aria-label="enter verb present tense"
+          placeholder="Verb: Present Tense"
+        />
+
+        <label for="tabbable"> Final Word Before the Credits Roll: </label>
+        <input
+          type="text"
+          id="tabbable"
+          name="tabbable"
+          aria-label="enter adjective"
+          placeholder="Descriptive Adjective"
+        />
+      </fieldset>
+
+      <button type="submit">Generate My Story</button>
+    </form>
+
+    <div class="container"></div>
+
+    <footer>
+      <p>
+        <strong>Accessibility isn't only a feature - it's a necessity. </strong>
+      </p>
+      <p>
+        It's not about checking boxes so screen readers <em> might</em> work.
+      </p>
+      <p>It's about <strong> real people</strong> actually using them.</p>
+    </footer>
+  </body>
+</html>
