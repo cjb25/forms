@@ -20,7 +20,7 @@ It represents:
 
 What you'll find inside
 
--a workingg MADLIB-style form (HTML/CSS/JS)
+-a working MADLIB-style form (HTML/CSS/JS)
 -notes and comments that reflect my exploration
 -a structure that may evolve into more templates later on
 
